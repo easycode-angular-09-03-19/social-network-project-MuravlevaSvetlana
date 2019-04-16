@@ -39,17 +39,15 @@ class="form"
       matInput
       placeholder="Repeat Password"
       formControlName="repeatPassword"
+      [errorStateMatcher]="matcher"
     >
     <mat-error *ngIf="signUpForm.get('repeatPassword').hasError('required')">
       Password is <strong>required</strong>
     </mat-error>
-    <mat-error *ngIf="signUpForm.hasError('notEqual')">
+    <mat-error *ngIf="signUpForm.get('repeatPassword').hasError('notEqual') && !signUpForm.get('repeatPassword').hasError('required')">
       Password is <strong>required</strong>
     </mat-error>
   </mat-form-field>
-  <p *ngIf="signUpForm.hasError('notEqual')">
-    Password not equal
-  </p>
 
   <mat-form-field class="w-100">
     <input

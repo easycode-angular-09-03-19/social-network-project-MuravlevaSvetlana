@@ -1,9 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { passwordEqual } from '@helpers/validators';
+import { FormControl, FormGroup, Validators, FormGroupDirective, NgForm } from '@angular/forms';
+import { passwordEqual, passwordEqualForInput } from '@helpers/validators';
+import { ErrorStateMatcher } from '@angular/material';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { LoginServerAnswer } from '../../interfaces/LoginServerAnswer';
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-signup-form',
@@ -12,6 +20,7 @@ import { LoginServerAnswer } from '../../interfaces/LoginServerAnswer';
 })
 export class SignupFormComponent implements OnInit {
   signUpForm: FormGroup;
+  matcher = new MyErrorStateMatcher();
   constructor(
     private authService: AuthService,
     private router: Router
@@ -22,7 +31,7 @@ export class SignupFormComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       first_name: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
-      repeatPassword: new FormControl('', Validators.required),
+      repeatPassword: new FormControl('', [ Validators.required, passwordEqualForInput ]),
       nickname: new FormControl('', Validators.required),
       last_name: new FormControl('', Validators.required),
       phone: new FormControl('', Validators.required),
@@ -36,6 +45,9 @@ export class SignupFormComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.signUpForm.invalid) {
+      return console.log('Validate error');
+    }
     this.authService.signup({...this.signUpForm.value}).subscribe((res: LoginServerAnswer) => {
       this.router.navigate(['/auth/login']);
     });

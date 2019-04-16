@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from '../app/global-guards/auth.guard'; 
+import { AuthGuard } from './common/global-guards/auth.guard';
 
 const routes: Routes = [
-  { path: 'auth', loadChildren: './modules/auth/auth.module#AuthModule' },
-  { path: '', loadChildren: './modules/home/home.module#HomeModule', canActivate: [AuthGuard] },
+  { path: 'auth', loadChildren: './modules/auth/auth.module#AuthModule', data: { withoutHeader: true } },
+  { path: '', loadChildren: './modules/home/home.module#HomeModule', canActivate: [AuthGuard] }
 ];
 
 @NgModule({

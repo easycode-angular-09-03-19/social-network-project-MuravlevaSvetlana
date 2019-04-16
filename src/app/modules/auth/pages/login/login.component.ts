@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import { GlobalAuthService } from '@services/global-auth.service';
+import { Router } from '@angular/router';
+import { GlobalAuthService } from 'app/common/services/global-auth.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +12,16 @@ export class LoginComponent implements OnInit {
   resetPasswordModal = false;
   constructor( 
     private router: Router,
-    private authServiceGlobal: GlobalAuthService
+    private authServiceGlobal: GlobalAuthService,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
     if (this.authServiceGlobal.isLogin) {
       this.router.navigate(['/']);// не знаю нужно ли было редиректить куда-то, но мне показалось странным просто проверить зарегистрирован ли пользователь
     }
+    this.activatedRoute.data.subscribe((value) => {
+      console.log(value);
+    });
   }
 }
