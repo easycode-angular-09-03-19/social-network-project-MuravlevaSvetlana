@@ -1,0 +1,5 @@
+<mat-toolbar *ngIf="!isHidden">
+    <button class="notification" (click)="showNotification()"> Notifications </button>
+    <app-notifications class="app-notifications" *ngIf="!notifIsHidden"></app-notifications>
+    <a class="profile" href="" *ngIf="userId" [routerLink]="['/users/', userId]">User profile</a>
+</mat-toolbar>

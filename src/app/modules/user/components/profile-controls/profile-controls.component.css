@@ -1,0 +1,42 @@
+.profile_section {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+.profile_avatar {
+    position: absolute;
+    width: 138px;
+    height: 138px;
+    border-radius: 50%;
+    background-color: #b0b0b0;
+    overflow: hidden;
+    z-index: 10;
+    top: 50%;
+    left: 0%;
+    transform: translate(0%, -50%);
+}
+
+.profile_avatar img {
+    width: 100%;
+}
+
+.profile_information {
+    margin-left: 200px;
+}
+
+.profile_points {
+    text-align: center;
+    border: 1px solid #e88bed;
+    line-height: 35px;
+    font-size: 24px;
+    padding: 5px 15px;
+    border-radius: 60px;
+    transition: background-color ease 0.8s;
+}
+
+.profile_points:hover {
+    background-color: #e88bed;
+}
+
