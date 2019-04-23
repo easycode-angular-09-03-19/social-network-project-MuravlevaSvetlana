@@ -1,0 +1,31 @@
+.profile_nav {
+    background-color: #212121;
+    color: #fff;
+}
+
+.container_wrap {
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    font-size: 20px;
+    flex-wrap: wrap;
+}
+
+.container_controls {
+    justify-content: space-between;
+}
+
+.profile_controls {
+    width: 50%;
+}
+
+.app_tab {
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    overflow: hidden;
+    align-items: center;
+    margin: 100px auto;
+}

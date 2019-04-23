@@ -6,7 +6,7 @@
     justify-content: flex-end;
 }
 
-.notification {
+.notification, .profile {
     padding: 5px 10px;
     border-radius: 500px;
     overflow: hidden;
@@ -16,6 +16,13 @@
     border-width: 0;
     cursor: pointer;
     margin-right: 30px;
+    color: #212121;
+    line-height: 30px;
+}
+
+.profile {
+    text-decoration: none;
+    font-family: Arial;
 }
 
 .app-notifications {

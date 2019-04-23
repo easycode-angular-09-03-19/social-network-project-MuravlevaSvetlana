@@ -1,0 +1,14 @@
+<div class="profile_section">
+  <div class="profile_avatar">
+    <img [src]="user?.avatar || null">
+  </div>
+  <div class="profile_information">
+    <span>{{user?.full_name}}</span><br>
+    <span>{{user?.country}}, {{user?.city}}</span>
+  </div>
+  <div class="profile_points">
+      <span>{{user?.rank.points}}</span><br>
+      <span>Points</span>
+  </div>
+</div>
+

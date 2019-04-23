@@ -21,7 +21,7 @@
     "paths": {
       "@env/*": ["environments/*"],
       "@helpers/*": ["app/helpers/*"],
-      "@services/*": ["app/global-services/*"]
+      "@services/*": ["app/common/services/*"]
     }
   }
 }

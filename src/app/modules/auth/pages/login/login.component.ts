@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.authServiceGlobal.isLogin) {
-      this.router.navigate(['/']);// не знаю нужно ли было редиректить куда-то, но мне показалось странным просто проверить зарегистрирован ли пользователь
+      this.router.navigate(['/']);
     }
     this.activatedRoute.data.subscribe((value) => {
       console.log(value);

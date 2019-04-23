@@ -1,0 +1,20 @@
+.profile_tab {
+    font-size: 24px;
+    line-height: 35px;
+    display: flex;
+}
+
+.profile_tab a {
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: color ease 0.8s;
+}
+
+.profile_tab a:hover, .profile_tab a:active {
+    color: #e88bed;
+}
