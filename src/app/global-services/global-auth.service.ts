@@ -7,6 +7,6 @@ export class GlobalAuthService {
   constructor() { }
 
   get isLogin(): boolean {
-    return localStorage.getItem('sn_app_token') ? true : false;
+    return !!localStorage.getItem('sn_app_token');
   }
 }

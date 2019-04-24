@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   resetPassword(param: ResetPassword): Observable<LoginServerAnswer> {
-    return this.http.post<LoginServerAnswer>(`${this.apiUrl}/public/auth/reset-password`,param).pipe(
+    return this.http.post<LoginServerAnswer>(`${this.apiUrl}/public/auth/reset-password`, param).pipe(
       map((res:LoginServerAnswer): LoginServerAnswer => {
         if (res.error) {
           console.log('try again');

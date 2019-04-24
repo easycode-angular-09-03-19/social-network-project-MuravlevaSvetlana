@@ -36,8 +36,13 @@ export class SignupFormComponent implements OnInit {
   }
 
   onSubmit() {
+    if (!this.signUpForm.invalid) return;
     this.authService.signup({...this.signUpForm.value}).subscribe((res: LoginServerAnswer) => {
-      this.router.navigate(['/auth/login']);
+      if (!res.error) {
+        this.router.navigate(['/auth/login']);
+      } 
+    }, err => {
+      console.log(err);
     });
   }
 }
