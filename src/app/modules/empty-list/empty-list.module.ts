@@ -6,11 +6,9 @@ import { EmptyListComponent } from './components/empty-list/empty-list.component
   declarations: [
     EmptyListComponent
   ],
-
   imports: [
     CommonModule
   ],
-
   exports: [
     EmptyListComponent
   ]

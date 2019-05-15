@@ -1,4 +1,8 @@
-import { HttpHandler, HttpInterceptor, HttpRequest, HttpEvent } from "@angular/common/http";
+import { HttpHandler,
+        HttpInterceptor,
+        HttpRequest,
+        HttpEvent 
+} from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Injectable } from "@angular/core";
 import { GlobalAuthService } from "../common/services/global-auth.service";

@@ -18,6 +18,7 @@
     margin-right: 30px;
     color: #212121;
     line-height: 30px;
+    transition: all ease 0.5s;
 }
 
 .profile {
@@ -27,10 +28,12 @@
 
 .app-notifications {
     width: 420px;
+    max-height: 400px;
+    overflow: auto;
     position: absolute;
     top: 72px;
-    right: 40px;
-    background-color: rgba(222, 222, 222, 0.80);
+    right: 430px;
+    background-color: #fff;
     z-index: 3;
     height: 415px;
     margin-top: 5px;
@@ -47,5 +50,10 @@
     right: 80px;
     border-style: solid;
     border-width: 0 14px 12px;
-    border-color: transparent transparent rgba(222, 222, 222, 0.80);
+    border-color: transparent transparent #fff;
+}
+
+.hover:hover {
+    color: #fff;
+    background: #212121;
 }

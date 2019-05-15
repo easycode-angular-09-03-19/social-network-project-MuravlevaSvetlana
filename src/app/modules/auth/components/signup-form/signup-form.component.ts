@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormControl, 
+         FormGroup, 
+         Validators, 
+         FormGroupDirective, 
+         NgForm 
+} from '@angular/forms';
 import { passwordEqual, passwordEqualForInput } from '@helpers/validators';
 import { ErrorStateMatcher } from '@angular/material';
 import { AuthService } from '../../services/auth.service';
@@ -44,7 +49,7 @@ export class SignupFormComponent implements OnInit {
     }, { validators: passwordEqual,  updateOn: 'submit' });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.signUpForm.invalid) {
       return console.log('Validate error');
     }

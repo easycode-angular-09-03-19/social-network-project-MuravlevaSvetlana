@@ -1,4 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, 
+         OnInit,
+         Output,
+         EventEmitter 
+} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { LoginServerAnswer } from '../../interfaces/LoginServerAnswer';
@@ -23,11 +27,11 @@ export class ResetPasswordModalComponent implements OnInit {
     });
   }
 
-  closeModal(event) {
+  closeModal(): void {
     this.modalCloseEvent.emit();
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.authService.resetPassword({...this.resetPasswordForm.value}).subscribe((res: LoginServerAnswer) => {
       this.modalCloseEvent.emit();
     });

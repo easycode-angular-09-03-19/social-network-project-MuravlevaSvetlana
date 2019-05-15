@@ -7,7 +7,6 @@ import { NotificationsComponent } from './components/notifications/notifications
 import { EmptyListModule } from '../empty-list/empty-list.module';
 import { NotificationItemComponent } from './components/notification-item/notification-item.component';
 
-
 @NgModule({
   declarations: [
     NavbarComponent,

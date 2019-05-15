@@ -17,15 +17,15 @@
 }
 
 .profile_controls {
-    width: 50%;
+    width: 100%;
+    display: flex;
 }
 
-.app_tab {
-    width:100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:flex-start;
-    overflow: hidden;
-    align-items: center;
-    margin: 100px auto;
+.profile_tab {
+    width: 1500px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    margin-top: 150px;
 }
+
+

@@ -1,4 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component,
+         EventEmitter, 
+         Input, 
+         OnInit, 
+         Output
+} from '@angular/core';
 
 @Component({
   selector: 'app-profile-cover',
@@ -7,13 +12,13 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class ProfileCoverComponent implements OnInit {
   @Input() cover;
-  @Input() isCurrentUser;
   @Output('upload') upload = new EventEmitter();
+  @Input() isCurrentUser: boolean;
   constructor() { }
 
-  ngOnInit() {
-  }
-  loadCover(input) {
+  ngOnInit() {}
+
+  loadCover(input): void {
     const [newCover] = input.files;
     if (newCover) {
       this.upload.emit(newCover);

@@ -1,4 +1,4 @@
-<!--<button (click)="onClick()">Show message</button>-->
-<app-navbar></app-navbar>
-<p-toast></p-toast>
+<mat-progress-bar *ngIf="loadingRouteConfig | async" mode="indeterminate"></mat-progress-bar>
+<app-navbar [notifIsHidden]="notifIsHidden"></app-navbar>
+<p-toast position="bottom-right"></p-toast>
 <router-outlet></router-outlet>

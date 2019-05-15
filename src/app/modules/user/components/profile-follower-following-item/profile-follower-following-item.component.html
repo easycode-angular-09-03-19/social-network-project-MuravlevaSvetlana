@@ -1,0 +1,28 @@
+<div class="follower_container">
+  <div class="cover_img" [style.backgroundImage]="'url(' + follower?.cover + ')'"></div>
+  <a (click)="chooseUser()">
+    <div class="follower_avatar">
+      <img [appImgLoader]="follower?.avatar">
+    </div>
+  </a>
+  <div class="follower_information">
+    <span>{{follower?.full_name}}</span><br> 
+    <span>{{follower?.city}}</span>
+  </div>
+  <ng-container *ngIf="follower?._id !== authId">
+    <ng-container [ngSwitch]="follower?._buttonText">
+      <button *ngSwitchCase="'follow'" 
+      [textContent]="follower?._buttonText"
+      class="follow"
+      (click)="clickButton()"
+      >
+      </button>
+      <button *ngSwitchCase="'following'"
+      [textContent]="follower?._buttonText" 
+      class="following"
+      (click)="clickButton()"
+      >
+      </button>
+    </ng-container>
+  </ng-container>
+</div>

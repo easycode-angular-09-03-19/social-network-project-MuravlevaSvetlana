@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Challenge } from 'app/common/global-interfaces/global-interface'; 
+import { Challenge } from '../../interfaces/global-interfaces'; 
 
 @Component({
   selector: 'app-challenge-card',
@@ -10,7 +10,6 @@ export class ChallengeCardComponent implements OnInit {
   @Input() challenge: [Challenge];
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

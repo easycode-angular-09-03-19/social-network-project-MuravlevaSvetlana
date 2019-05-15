@@ -1,4 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component,
+         OnInit, 
+         Input, 
+         Output, 
+         EventEmitter 
+} from '@angular/core';
+import { FavouriteImg } from '../../interfaces/user-intarface';
 
 @Component({
   selector: 'app-picture-preview',
@@ -6,10 +12,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./picture-preview.component.css']
 })
 export class PicturePreviewComponent implements OnInit {
-  @Input() image;
+  @Input() image: FavouriteImg;
+  @Output() img = new EventEmitter();
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.image);
+  ngOnInit() { }
+
+  show(): void {
+    this.img.emit();
   }
 }

@@ -1,6 +1,13 @@
 export interface UploadSelfies {
     counts: number;
-    images: Array<string>; 
+    images: {
+        create_date: string;
+        glories: Array<string>;
+        likes: Array<string>;
+        url: string;
+        views: Array<string>;
+        _id: string;
+    }[]; 
 }
 
 export interface User {
@@ -48,3 +55,46 @@ export interface User {
     vote_power: number;
     _id: string;
 }
+
+export interface Favourites {
+    counts: number;
+    images: {
+        create_date: string;
+        glories: Array<string>;
+        likes: Array<string>;
+        url: string;
+        views: Array<string>;
+        _id: string;
+    }[];
+}
+
+export interface FavouriteImg {
+    create_date: string;
+    glories: Array<string>;
+    likes: Array<string>;
+    url: string;
+    views: Array<string>;
+    _id: string;
+}
+
+export interface Followers {
+    counts: number;
+    users: {
+        avatar: string;
+        city: string;
+        cover: string; 
+        full_name:string; 
+        _id: string;
+        _buttonText?: string;
+    } [];
+}
+
+export interface Follower {
+    avatar: string;
+    city: string;
+    cover: string; 
+    full_name:string; 
+    _id: string;
+    _buttonText?: string;
+}
+

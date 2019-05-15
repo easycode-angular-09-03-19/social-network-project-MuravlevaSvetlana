@@ -9,11 +9,16 @@ import { MessageService } from 'primeng/api';
 import { NavbarModule } from './modules/navbar/navbar.module';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { EmptyListModule } from './modules/empty-list/empty-list.module';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { WinnersModule } from './modules/winners/winners.module';
+import { CarouselPicturesComponent } from './app/common/components/carousel-pictures/carousel-pictures.component';
+import { CarouselPictureComponent } from './modules/components/carousel-picture/carousel-picture.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CarouselPicturesComponent,
+    CarouselPictureComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,9 @@ import { EmptyListModule } from './modules/empty-list/empty-list.module';
     BrowserAnimationsModule,
     ToastModule,
     NavbarModule,
-    EmptyListModule
+    EmptyListModule,
+    MatProgressBarModule,
+    WinnersModule,
   ],
   providers: [MessageService,
     {

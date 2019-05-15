@@ -7,8 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class EmptyListComponent implements OnInit {
   @Input() text: string;
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor() {}
+  ngOnInit() {}
 }

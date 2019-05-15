@@ -1,15 +1,15 @@
 .content {
     color: #fff;
-    margin: 0 -3px 0 -3px;
     background: cover;
     font-size: 20px;
+    background-repeat: no-repeat;
 }
 
 .main-content {
     min-width: 100%;
-    height: calc(100vh - 180px);
     position:relative;
     overflow: hidden;
+    height: calc(100vh - 180px);
 }
 
 .inner-text {
@@ -18,27 +18,27 @@
     left: 10%;
     max-width: 500px;
     height: 100%;
-    padding: 42px;
+    padding: 20px 42px;
     background-color: rgba(0,0,0,.65);
     text-align: start;
 }
 
 h1 {
-    font-size: 65px;
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 span {
     color: #e12ebc;
-    font-size: 60px;
+    font-size: 30px;
     font-style: italic;
 }
 
 .inner-text p {
     font-size: 22px;
     line-clamp: 1.5;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
 .inner-text button {
@@ -55,7 +55,7 @@ span {
 
 .foot-content {
     width: 100%;
-    padding: 35px 0;
+    padding: 10px 0;
     background-color: #212121;
     display: flex;
     flex-direction: column;
@@ -67,5 +67,11 @@ ul {
 }
 
 ul li {
+    margin-right: 15px;
     padding-right: 20px;
+    margin-bottom: 0;
+}
+
+ul li:last-child {
+    margin-right: 0;
 }

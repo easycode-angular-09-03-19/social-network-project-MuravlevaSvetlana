@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MessageService } from 'primeng/api';
 import { HomeData } from '../../interfaces/serverAnswer';
 
 @Component({
@@ -9,14 +8,6 @@ import { HomeData } from '../../interfaces/serverAnswer';
 })
 export class HomeInnerComponent implements OnInit {
   @Input() data: HomeData;
-  constructor(
-    private messageService: MessageService
-  ) { }
-
-  ngOnInit() {
-  }
-
-  onClick() {
-    this.messageService.add({severity: 'success', summary: 'Service Message', detail: 'Via MessageService'});
-  }
+  constructor() {}
+  ngOnInit() {}
 }

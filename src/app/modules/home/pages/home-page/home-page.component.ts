@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../services/home.service';
 import { zip } from 'rxjs';
 import { HomeData } from '../../interfaces/serverAnswer';
-import { Challenge } from 'app/common/global-interfaces/global-interface'; 
+import { Challenge } from 'app/common/interfaces/global-interfaces'; 
+import { MessageService } from 'primeng/api';
+
 
 @Component({
   selector: 'app-home-page',
@@ -12,8 +14,10 @@ import { Challenge } from 'app/common/global-interfaces/global-interface';
 export class HomePageComponent implements OnInit {
   homePageData: HomeData;
   challenges: [Challenge];
+  isLoading = true;
   constructor(
     private homeService: HomeService,
+    private messageService: MessageService,
   ) { }
 
   ngOnInit() {
@@ -24,10 +28,11 @@ export class HomePageComponent implements OnInit {
       .subscribe(([homePageData, { challenges }]: any) => {
         this.homePageData = homePageData;
         this.challenges = challenges;
-        console.log(homePageData);
-        console.log(challenges);
       }, (err) => {
+        this.messageService.add({severity: 'error', summary: 'Service Message', detail: 'Via MessageService'});
         console.log(err);
+      }, () => {
+        this.isLoading = false;
       });
   }
 }

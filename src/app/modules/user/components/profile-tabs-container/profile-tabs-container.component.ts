@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../../interfaces/user-intarface';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+import { map } from "rxjs/operators";
+import { Observable } from "rxjs";
+import { FavouriteImg } from '../../interfaces/user-intarface';
 
 @Component({
   selector: 'app-profile-tabs-container',
@@ -7,12 +10,32 @@ import { User } from '../../interfaces/user-intarface';
   styleUrls: ['./profile-tabs-container.component.css']
 })
 export class ProfileTabsContainerComponent implements OnInit {
-  @Input() activeTab: string;
-  @Input() user: User;
-
-  constructor() { }
+  activeTab: Observable<string>;
+  showCarousel = false;
+  carouselId: Array<string> = [];
+  @Input() isCurrentUser: boolean;
+  @Output() uploadNewUser = new EventEmitter<string>();
+  constructor(
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
+    this.activeTab = this.route.queryParams.pipe(map((params) => params.tab));
   }
 
+  chooseUser(id:string): void {
+    this.uploadNewUser.emit(id);
+  }
+
+  showImages(images: FavouriteImg[]): void {
+    this.carouselId.splice(0, this.carouselId.length);    
+    images.forEach(item => {
+      this.carouselId.push(item._id);
+    })
+    this.showCarousel = true;
+  }
+
+  closeCarousel(): void {
+    this.showCarousel = false;
+  }
 }
